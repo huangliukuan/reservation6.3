@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>注册</title>
-		<link rel="stylesheet" type="text/css" href="./css/common.css"/>
-</head>
-<body>
-    <div class="pages p10">
-			<form action="" method="post">
-    	<div class="box mb10">
-    		<div class="h42 bm1 flex c6 fz18" >手机验证</div>
-				<div class="h42 bm1 flex loginItem">
-					<img src="./img/mobile.png" >
-					<input class="flex1" type="tel" name="mobile" id="mobile" placeholder="请输入手机号" value="" />
-				</div>
-				<div class="h42 bm1 flex loginItem">
-					<img src="./img/code.png" >
-					<input type="number" name="code" id="code" placeholder="请输入验证码" value="" />
-					<div class="getCode">获取验证码</div>
-				</div>
-    	</div>
-			
-			<div class="box">
-				<div class="h42 bm1 flex loginItem">
-					<div class="c6 fz18 w25">姓名</div>
-					<input class="flex1" type="tel" name="mobile" id="mobile" placeholder="请输入姓名" value="" />
-				</div>
-				<div class="h42 bm1 flex loginItem">
-					<div class="c6 fz18 w25">性别</div>
-					<div class="flex flex1">
-						<label class="h42 flex aic"> <text>男</text>  <input class="radio h42" type="radio" name="gender" id="gender" value="0" /> </label>
-						<label class="h42 flex aic"> <text>女</text> <input class="radio h42" type="radio" name="gender" id="gender" value="1" /> </label>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+
+
+		</script>
+	</head>
+	<body>
+		<div class="pages p10">
+			<form>
+				<div class="box mb10">
+					<div class="h42 bm1 flex c6 fz18">手机验证</div>
+					<div class="h42 bm1 flex loginItem">
+						<img src="./img/mobile.png">
+						<input class="flex1" type="tel" name="mobile" id="mobile" placeholder="请输入手机号" value="" />
+					</div>
+					<div class="h42 bm1 flex loginItem">
+						<img src="./img/code.png">
+						<input type="number" name="code" id="code" placeholder="请输入验证码" value="" />
+						<div class="getCode">获取验证码</div>
 					</div>
 				</div>
-				<div class="h42 bm1 flex loginItem">
-					<div class="c6 fz18 w25">生日</div>
-					
+
+				<div class="box">
+					<div class="h42 bm1 flex loginItem">
+						<div class="c6 fz18 w25">姓名</div>
+						<input class="flex1" type="tel" name="name" id="name" placeholder="请输入姓名" value="" />
+					</div>
+					<div class="h42 bm1 flex loginItem">
+						<div class="c6 fz18 w25">性别</div>
+						<div class="flex flex1">
+							<label class="h42 flex aic"> <text>男</text> <input class="radio h42" type="radio"
+									name="gender" id="gender" value="0" checked /> </label>
+							<label class="h42 flex aic"> <text>女</text> <input class="radio h42" type="radio"
+									name="gender" id="gender" value="1" /> </label>
+						</div>
+					</div>
+					<div class="h42 bm1 flex loginItem">
+						<div class="c6 fz18 w25">生日</div>
+						<input class="c6" type="text" name="birthday" id="birthday" placeholder="选择日期">
+					</div>
 				</div>
-			</div>
+
+				<button type="button" class="btn">激活</button>
 			</form>
-    </div>
-		
+		</div>
 		<script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
-</body>
+		<script src="./js/jdate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/myPlugin.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+				new Jdate({
+					el: '#birthday',
+					format: 'YYYY-MM-DD',
+					beginYear: 1900,
+					endYear: 2100,
+				})
+
+				let regMobile = /^1[3-9][0-9]{9}$/
+
+				$('button').click(function() {
+					let form = $('form').serializeArray(),
+						data = {};
+					form.forEach((item) => {
+						data[item.name] = item.value;
+					})
+					console.log(data);
+				})
+
+				$('.getCode').on('click', function() {
+					let mobile = $('#mobile').val();
+					if (!regMobile.test(mobile)) {
+						$().showToast('手机格式不正确！');
+						return false;
+					}
+				})
+			})()
+		</script>
+	</body>
 </html>

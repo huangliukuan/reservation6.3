@@ -1,65 +1,79 @@
-*{
+* {
 	padding: 0;
 	margin: 0;
 }
 
-div{
+div {
 	box-sizing: border-box;
 }
 
 a:link,
 a:visited,
 a:hover,
-a:active{
+a:active {
 	color: #000;
 	text-decoration: none;
 }
 
-.w25{
+button {
+	outline: none
+}
+
+.w25 {
 	width: 25%;
 }
-.w50{
+
+.w50 {
 	width: 50%;
 }
-.w75{
+
+.w75 {
 	width: 75%;
 }
-.w100{
+
+.w100 {
 	width: 100%;
 }
 
-img{
+img {
 	width: 100%;
 	height: 100%;
 }
 
-.p10{
+.p0 {
+	padding: 0 !important;
+}
+
+.p10 {
 	padding: 10px;
 }
 
-.mb10{
+.mt10{
+	margin-top: 10px;
+}
+.mb10 {
 	margin-bottom: 10px;
 }
 
-.bm1{
+.bm1 {
 	border-bottom: 1px solid #ccc;
 }
 
-.h42{
+.h42 {
 	height: 42px;
 	line-height: 42px;
 }
 
-.flex{
+.flex {
 	display: flex;
 }
 
-.flex1{
+.flex1 {
 	flex: 1 !important;
 }
 
 
-.box{
+.box {
 	width: 100%;
 	height: auto;
 	padding: 10px;
@@ -67,61 +81,86 @@ img{
 	border-radius: 5px;
 }
 
-.pages{
-	width: 100%;
+.pages {
+	width: 100vw;
 	height: 100vh;
 	background-color: #f1f1f1;
-	padding-top:20px;
+	padding-top: 20px;
 }
 
 
-.c6{
+.c6 {
 	color: #666;
 }
 
-.fz18{
+.fz18 {
 	font-size: 18px;
 }
 
-.aic{
+.fz16 {
+	font-size: 16px;
+}
+.fz14 {
+	font-size: 14px;
+}
+
+.fb {
+	font-weight: bold;
+}
+
+.aic {
 	align-items: center;
 }
 
 
+.blue{
+	color: #4DABF7 !important;
+}
 
-.info{
+.red{
+	color: #ff8787 !important;
+}
+
+
+
+
+
+.info {
 	width: 90%;
-	height: 200px;
+	height: 180px;
 	margin: 0 auto;
 	border-radius: 10px;
-	background: url(../img/backImg2.png)  no-repeat;
+	background: url(../img/backImg2.png) no-repeat;
 	background-size: 100% 100%;
 	color: #fff;
 	padding: 20px;
 }
 
-.shopInfo{
+.shopInfo {
 	width: 100%;
 	height: 100px;
 	display: flex;
 	font-size: 24px;
 }
-.avatar{
+
+.avatar {
 	width: 64px;
 	height: 64px;
 	border-radius: 50%;
 	margin-right: 10px;
 }
-.cardNum{
+
+.cardNum {
 	margin-top: 40px;
 }
-.login{
+
+.login {
 	display: block;
 	width: 60%;
 	height: 32px;
 	line-height: 32px;
 	text-align: center;
-	margin:30px auto 0;
+	margin: 15px auto 0;
 	border: 2px solid #fff;
 	border-radius: 50px;
 }
@@ -129,12 +168,12 @@ img{
 .login:link,
 .login:visited,
 .login:hover,
-.login:active{
+.login:active {
 	color: #fff;
 }
 
 
-.tabBox{
+.tabBox {
 	width: 100%;
 	height: auto;
 	margin-top: 20px;
@@ -142,7 +181,8 @@ img{
 	display: flex;
 	flex-wrap: wrap;
 }
-.tabItem{
+
+.tabItem {
 	width: 25%;
 	height: 100px;
 	display: flex;
@@ -150,22 +190,25 @@ img{
 	justify-content: center;
 	align-items: center;
 }
-.tabItem img{
+
+.tabItem img {
 	width: 46px;
 	height: 46px;
 	margin-bottom: 6px;
 }
 
 /* 登陆 */
-.loginItem{
+.loginItem {
 	align-items: center;
 }
-.loginItem img{
+
+.loginItem img {
 	width: 28px;
 	height: 28px;
 	margin-right: 10px;
 }
-.loginItem input{
+
+.loginItem input {
 	width: calc(100% - 150px);
 	height: 36px;
 	line-height: 36px;
@@ -173,7 +216,8 @@ img{
 	padding: 0;
 	font-size: 18px;
 }
-.getCode{
+
+.getCode {
 	width: 100px;
 	height: 32px;
 	line-height: 32px;
@@ -183,7 +227,356 @@ img{
 	border-radius: 5px;
 	font-size: 14px;
 }
-.loginItem .radio{
+
+.loginItem .radio {
 	width: 16px;
-	margin:  0 16px  0 4px;
+	margin: 0 16px 0 4px;
+}
+
+.btn {
+	display: block;
+	width: 60%;
+	height: 32px;
+	line-height: 32px;
+	padding: 0;
+	margin: 50px auto 0;
+	color: #fff;
+	background-color: #4DABF7;
+	border: 0;
+	border-radius: 50px;
+	text-align: center;
+}
+
+
+/* 场地预约 */
+.body {
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+}
+
+.sitePages {
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+}
+
+.scrollBox {
+	width: 100%;
+	overflow: auto;
+}
+
+.body::-webkit-scrollbar,
+.siteAreaBox::-webkit-scrollbar,
+.siteBoxs::-webkit-scrollbar,
+.scrollBox::-webkit-scrollbar,
+.scroll::-webkit-scrollbar {
+	display: none;
+}
+
+.scroll {
+	width: 600px;
+	border-bottom: 1px solid #ccc;
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+	display: -webkit-box;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.scrollItem {
+	width: 90px;
+	border-right: 1px solid #ccc;
+	padding: 6px 0;
+}
+
+.scrollItem:last-child {
+	border-right: 0;
+}
+
+.actItem {
+	color: #4DABF7;
+}
+
+.siteBoxs {
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow: auto;
+	margin-top: 10px;
+	font-size: 12px;
+	text-align: center;
+	color: #666;
+}
+
+.siteBox {
+	width: 100%;
+	height: 150vh;
+	display: flex;
+}
+
+.siteTime {
+	width: 60px;
+	height: calc(100vh + 16px);
+	margin-top: 22px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.siteAreaBox {
+	width: calc(100% - 65px);
+	height: calc(100vh + 40px);
+	overflow-x: auto;
+}
+
+.siteArea {
+	width: 600px;
+
+}
+
+
+.siteCode div {
+	width: 66px;
+}
+
+.siteSelBox {
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+.siteSel {
+	justify-content: space-around;
+}
+
+.siteSel div {
+	width: 36px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.promptitem .close,
+.siteSel .close {
+	background-color: #ccc;
+	color: #ccc;
+}
+
+
+.moneyBox,
+.promptitem .sel,
+.siteSel .sel {
+	background-color: #4DABF7;
+	color: #fff;
+	border: 0;
+}
+
+.bottom {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+.bottom .btn {
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 auto;
+}
+
+.promptitem,
+.prompt {
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+}
+
+.promptitem>text:first-child {
+	display: block;
+	width: 20px;
+	height: 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 10px;
+}
+
+.selBox {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 10px;
+	color: #666;
+	text-align: center;
+	margin-bottom: 4px;
+	padding: 0 10px;
+}
+
+.selItem {
+	border: 1px solid #CCC;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 2px;
+}
+
+.selTime {
+	background-color: #4DABF7;
+	color: #fff;
+	padding: 3px 6px;
+}
+
+.selSite {
+	padding: 3px 6px;
+}
+
+/* 我的预约 */
+
+
+.tabBar {
+	width: 100%;
+	height: 54px;
+	line-height: 54px;
+	display: flex;
+	justify-content: space-around;
+	background-color: #fff;
+}
+
+.actBar {
+	color: #4DABF7;
+	border-bottom: 2px solid #4DABF7;
+}
+
+.listItem {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.listTop {
+	height: 32px;
+	line-height: 32px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	color: #999;
+}
+
+.listTop>div:first-child {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+}
+
+.listDay {
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+}
+
+.listTime {
+	font-size: 14px;
+	color: #666;
+}
+
+.btnBox {
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	display: flex;
+	font-size: 14px;
+	justify-content: flex-end;
+	margin-top: 10px;
+}
+
+.btnBox div {
+	height: 28px;
+	line-height: 28px;
+	padding: 0 10px;
+	color: #fff;
+	border-radius: 50px;
+	background-color: #69db7c;
+	margin-left: 10px;
+}
+
+.btnBox .pay {
+	background-color: #4DABF7;
+}
+
+.nodata{
+	width: 100%;
+	text-align: center;
+	margin-top: 30%;
+	color: #666;
+	font-size: 14px;
+}
+
+.nodata img{
+	width: 120px;
+}
+
+/* 我的钱包 */
+
+.priceTit {
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.money {
+	width: 100%;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	margin-top: 6px;
+	
+}
+.price text{
+	font-size: 16px;
+	font-weight: normal;
+}
+.recording{
+	height: 64px;
+	display: flex;
+	color: #666;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+}
+
+/* 充值 */
+.gold{
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin: 30px auto 10px;
+}
+
+.money{
+	display: block;
+	width: 50%;
+	height: 36px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	margin: 0 auto 30px;
+	text-align: center;
+	font-size: 20px;
+}
+.mBtn{
+	height: 46px !important;
+	line-height: 46px !important;
+	font-size: 18px;
+	margin-top: 50%;
 }
