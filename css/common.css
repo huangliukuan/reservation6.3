@@ -48,9 +48,10 @@ img {
 	padding: 10px;
 }
 
-.mt10{
+.mt10 {
 	margin-top: 10px;
 }
+
 .mb10 {
 	margin-bottom: 10px;
 }
@@ -100,6 +101,7 @@ img {
 .fz16 {
 	font-size: 16px;
 }
+
 .fz14 {
 	font-size: 14px;
 }
@@ -113,11 +115,11 @@ img {
 }
 
 
-.blue{
+.blue {
 	color: #4DABF7 !important;
 }
 
-.red{
+.red {
 	color: #ff8787 !important;
 }
 
@@ -275,7 +277,7 @@ img {
 }
 
 .scroll {
-	width: 600px;
+	width: 100%;
 	border-bottom: 1px solid #ccc;
 	font-size: 12px;
 	color: #666;
@@ -286,7 +288,7 @@ img {
 }
 
 .scrollItem {
-	width: 90px;
+	width: 50%;
 	border-right: 1px solid #ccc;
 	padding: 6px 0;
 }
@@ -300,13 +302,15 @@ img {
 }
 
 .siteBoxs {
-	width: 100%;
 	height: calc(100vh - 100px);
-	overflow: auto;
-	margin-top: 10px;
-	font-size: 12px;
+	overflow-y: auto;
+	margin-top: 0.7rem;
+	font-size: 0.75rem;
 	text-align: center;
 	color: #666;
+	position: fixed;
+	top: 2.5rem;
+	left: 0rem;
 }
 
 .siteBox {
@@ -316,31 +320,55 @@ img {
 }
 
 .siteTime {
-	width: 60px;
-	height: calc(100vh + 16px);
-	margin-top: 22px;
+	width: 4rem;
+	height: calc(100vh + 3.25rem);
+	padding-top: 2.25rem;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	z-index: 120;
 }
 
 .siteAreaBox {
-	width: calc(100% - 65px);
-	height: calc(100vh + 40px);
-	overflow-x: auto;
+	width: calc(100% - 4rem);
+	position: relative;
+	left: 4rem;
+	top: 0;
+	z-index: 110;
 }
 
-.siteArea {
-	width: 600px;
-
+.siteCodeBox {
+	width: 36rem;
+	position: fixed;
+	top: 3rem;
+	left: 4rem;
+	background-color: #fff;
 }
 
+.sitename {
+	height: 2rem;
+	line-height: 2rem;
+}
 
 .siteCode div {
-	width: 66px;
+	width: 2.65rem;
 }
 
+
+.siteArea {
+	height: calc(100vh + 3rem);
+	margin-top: 3rem;
+	overflow: hidden;
+}
+
+
+
 .siteSelBox {
+	/* width: 36rem; */
 	height: 100vh;
 	display: flex;
 	justify-content: space-around;
@@ -352,10 +380,11 @@ img {
 }
 
 .siteSel div {
-	width: 36px;
-	height: 24px;
-	line-height: 24px;
-	border-radius: 4px;
+	width: 2.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border-radius: 0.25rem;
+	margin: 0 0.25rem;
 	border: 1px solid #ccc;
 }
 
@@ -380,6 +409,7 @@ img {
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	z-index: 1000;
 	background-color: #fff;
 }
 
@@ -388,6 +418,8 @@ img {
 	height: 36px;
 	line-height: 36px;
 	margin: 0 auto;
+	border-radius: 0;
+	background-image: linear-gradient(to right, #24B2F4 0%, #366CB3 100%);
 }
 
 .promptitem,
@@ -512,7 +544,7 @@ img {
 	background-color: #4DABF7;
 }
 
-.nodata{
+.nodata {
 	width: 100%;
 	text-align: center;
 	margin-top: 30%;
@@ -520,7 +552,7 @@ img {
 	font-size: 14px;
 }
 
-.nodata img{
+.nodata img {
 	width: 120px;
 }
 
@@ -540,13 +572,15 @@ img {
 	font-weight: bold;
 	margin-bottom: 20px;
 	margin-top: 6px;
-	
+
 }
-.price text{
+
+.price text {
 	font-size: 16px;
 	font-weight: normal;
 }
-.recording{
+
+.recording {
 	height: 64px;
 	display: flex;
 	color: #666;
@@ -556,14 +590,14 @@ img {
 }
 
 /* 充值 */
-.gold{
+.gold {
 	width: 48px;
 	height: 48px;
 	display: block;
 	margin: 30px auto 10px;
 }
 
-.money{
+.money {
 	display: block;
 	width: 50%;
 	height: 36px;
@@ -574,7 +608,8 @@ img {
 	text-align: center;
 	font-size: 20px;
 }
-.mBtn{
+
+.mBtn {
 	height: 46px !important;
 	line-height: 46px !important;
 	font-size: 18px;

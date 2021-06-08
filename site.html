@@ -20,26 +20,6 @@
 							<div>06-08</div>
 							<div>星期一</div>
 						</div>
-						<div class="scrollItem">
-							<div>06-09</div>
-							<div>星期一</div>
-						</div>
-						<div class="scrollItem">
-							<div>06-10</div>
-							<div>星期一</div>
-						</div>
-						<div class="scrollItem">
-							<div>06-11</div>
-							<div>星期一</div>
-						</div>
-						<div class="scrollItem">
-							<div>06-12</div>
-							<div>星期一</div>
-						</div>
-						<div class="scrollItem">
-							<div>06-13</div>
-							<div>星期一</div>
-						</div>
 					</div>
 				</div>
 
@@ -65,8 +45,8 @@
 							<div>22:00</div>
 						</div>
 						<div class="siteAreaBox">
-							<div class="siteArea">
-								<div>篮球场</div>
+							<div class="siteCodeBox">
+								<div class="sitename">篮球场</div>
 								<div class="siteCode flex">
 									<div>1号场</div>
 									<div>2号场</div>
@@ -81,6 +61,8 @@
 									<div>11号场</div>
 									<div>12号场</div>
 								</div>
+							</div>
+							<div class="siteArea" id="siteArea">
 								<div class="siteSelBox">
 									<div class="siteSel flex">
 										<div class="close">100</div>
@@ -306,18 +288,18 @@
 										<div>100</div>
 										<div>100</div>
 									</div>
-						
+
 								</div>
-						
+
 							</div>
-						
+
 						</div>
 					</div>
 				</div>
-				
-				
-				
-				<div class="bottom">
+
+
+
+					<div class="bottom">
 					
 					<div class="prompt" style="display: none;">
 						<div class="promptitem">
@@ -382,6 +364,43 @@
 		</div>
 
 
-		<script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+				<script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+				<script type="text/javascript">
+					let siteArea = document.getElementById("siteArea"),
+						X1 = 0,
+						X2 = 0,
+						m = 0,
+						mX = 0,
+						mS = 0;
+					siteArea.addEventListener("touchstart", function(e) {
+						X1 = e.changedTouches[0].pageX;
+						mS = mX;
+					});
+					siteArea.addEventListener("touchmove", function(e) {
+						X2 = e.changedTouches[0].pageX;
+						m = X2 - X1;
+
+						if (m>0  && mX >=0) {
+							m = 0;
+							mS = 0;
+						} else if(mX < -255 && m<0 ){
+							m = 0;
+						} else{
+								mX = m + mS;
+						}
+
+
+						// console.log(mX,mS,m);
+					
+						$(".siteSelBox").css({
+							"marginLeft": mX + "px"
+						})
+						$(".siteCodeBox").css({
+							"marginLeft": mX + "px"
+						})
+					})
+				</script>
+
 	</body>
 </html>
