@@ -45,11 +45,19 @@ img {
 }
 
 .p10 {
-	padding: 10px;
+	padding: 10px !important;
+}
+
+.mr5{
+	margin-right: 5px;
 }
 
 .mt10 {
 	margin-top: 10px;
+}
+
+.ml10{
+	margin-left: 10px;
 }
 
 .mb10 {
@@ -67,6 +75,10 @@ img {
 
 .flex {
 	display: flex;
+}
+
+.jb{
+	justify-content: space-between;
 }
 
 .flex1 {
@@ -450,6 +462,7 @@ img {
 	text-align: center;
 	margin-bottom: 4px;
 	padding: 0 10px;
+	background-color: #fff;
 }
 
 .selItem {
@@ -614,4 +627,18 @@ img {
 	line-height: 46px !important;
 	font-size: 18px;
 	margin-top: 50%;
+}
+
+/* 订单确认 */
+
+.wechat{
+	width: 24px;
+	height: 24px;
+	margin-right: 5px;
+}
+.moneySbt{
+	height: 46px;
+	line-height: 46px;
+	align-items: center;
+	padding: 0 10px 0 5px;
 }
